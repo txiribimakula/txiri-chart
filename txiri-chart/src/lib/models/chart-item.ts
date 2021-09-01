@@ -22,7 +22,7 @@ export class ChartItem {
     name: string;
     color: string;
 
-    setPath (height: number, length: number, previousItem: ChartItem | undefined) {
+    setPath (height: number, length: number, previousItem: ChartItem | null) {
         this.points.forEach((point, pointIndex) => {
             point.update(pointIndex, height, previousItem == null ? 0 : previousItem.points[pointIndex].y);
             if (pointIndex == 0) {

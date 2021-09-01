@@ -62,7 +62,7 @@ export class Chart {
         }
         this.height *= 10;
 
-        var previousItem: ChartItem | undefined = undefined;
+        var previousItem: ChartItem | null = null;
         this.items.forEach(item => {
             item.setPath(this.height, this.length, previousItem);
             previousItem = item;
