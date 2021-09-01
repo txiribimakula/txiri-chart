@@ -23,11 +23,11 @@ export class Chart {
 
     items: ChartItem[];
 
-    length: number;
-    height: number;
+    length: number = 0;
+    height: number = 0;
 
-    minDate: Date;
-    maxDate: Date;
+    minDate: Date = new Date(2014, 9);
+    maxDate: Date = new Date(2016, 12);
 
     originalItems: ChartItem[];
 
@@ -62,7 +62,7 @@ export class Chart {
         }
         this.height *= 10;
 
-        var previousItem = null;
+        var previousItem: ChartItem | undefined = undefined;
         this.items.forEach(item => {
             item.setPath(this.height, this.length, previousItem);
             previousItem = item;
